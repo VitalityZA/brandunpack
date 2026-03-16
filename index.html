@@ -22,6 +22,7 @@
 
   html, body {
     height: 100%;
+    overflow-x: hidden;
   }
 
   body {
@@ -47,6 +48,7 @@
     background-size: 60px 60px;
     animation: gridShift 20s linear infinite;
     z-index: 0;
+    overflow: hidden;
   }
 
   @keyframes gridShift {
@@ -102,7 +104,9 @@
     text-align: center;
     padding: 2rem;
     max-width: 800px;
+    width: 100%;
     margin: auto;
+    overflow: hidden;
   }
 
   /* Status pill */
