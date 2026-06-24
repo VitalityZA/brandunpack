@@ -67,9 +67,9 @@
 
   function Footer({ onStart, onNav }) {
     const cols = [
-      ['Services', ['Product branding', 'Packaging design', 'Listing images', 'A+ content', 'Storefronts']],
-      ['Studio', ['Work', 'Process', 'Pricing', 'Reviews']],
-      ['Connect', ['hello@brandunpack.com', '(813) 321-0833', 'Instagram']],
+      { h: 'Services', items: [{ label: 'Product branding' }, { label: 'Packaging design' }, { label: 'Listing images' }, { label: 'A+ content' }, { label: 'Storefronts' }] },
+      { h: 'Studio', items: [{ label: 'Work', nav: 'work' }, { label: 'Process', nav: 'process' }, { label: 'Pricing', nav: 'pricing' }, { label: 'Reviews', nav: 'reviews' }, { label: 'FAQ', nav: 'faq' }] },
+      { h: 'Connect', items: [{ label: 'hello@brandunpack.com', href: 'mailto:hello@brandunpack.com' }, { label: '(813) 321-0833', href: 'tel:+18133210833' }, { label: 'Instagram', href: 'https://www.instagram.com/brandunpack/', external: true }] },
     ];
     return (
       <footer style={{ background: INK, color: 'var(--bu-cream)', borderTop: `2px solid ${INK}` }}>
@@ -84,11 +84,20 @@
               <Btn variant="gradient" onClick={onStart} iconRight={<ArrowUpRight size={16} />}>Start a project</Btn>
             </div>
             <div style={{ display: 'flex', gap: 56, flexWrap: 'wrap' }}>
-              {cols.map(([h, items]) => (
+              {cols.map(({ h, items }) => (
                 <div key={h}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--bu-orange)', marginBottom: 16 }}>{h}</div>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 11 }}>
-                    {items.map((it) => <li key={it}><a href="#" onClick={(e) => e.preventDefault()} style={{ color: 'color-mix(in srgb, var(--bu-cream) 74%, transparent)', textDecoration: 'none', fontSize: 14 }}>{it}</a></li>)}
+                    {items.map((it) => {
+                      const base = { color: 'color-mix(in srgb, var(--bu-cream) 74%, transparent)', textDecoration: 'none', fontSize: 14 };
+                      if (it.nav) {
+                        return <li key={it.label}><a href={'#' + it.nav} onClick={(e) => { e.preventDefault(); onNav(it.nav); }} style={{ ...base, cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--bu-cream)'; }} onMouseLeave={(e) => { e.currentTarget.style.color = base.color; }}>{it.label}</a></li>;
+                      }
+                      if (it.href) {
+                        return <li key={it.label}><a href={it.href} {...(it.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} style={{ ...base, cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--bu-cream)'; }} onMouseLeave={(e) => { e.currentTarget.style.color = base.color; }}>{it.label}</a></li>;
+                      }
+                      return <li key={it.label}><span style={base}>{it.label}</span></li>;
+                    })}
                   </ul>
                 </div>
               ))}

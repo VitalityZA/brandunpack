@@ -4,7 +4,7 @@
   const { Check, ArrowRight, Star } = window.BUIcons;
   const wrap = { maxWidth: 1320, margin: '0 auto', padding: '0 28px' };
 
-  const NICHES = ['Supplements', 'Beauty & Cosmetics', 'Food & Drink', 'Toys', 'Fitness', 'Electronics', 'Health & Wellness', 'Home & Kitchen'];
+  const NICHES = ['Supplements', 'Beauty & Cosmetics', 'Food & Drink', 'Toys', 'Baby & Kids', 'Fitness', 'Electronics', 'Health & Wellness', 'Home & Kitchen'];
 
   function Studio() {
     return (
