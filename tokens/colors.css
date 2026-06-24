@@ -1,0 +1,71 @@
+/* ===========================================================================
+   BrandUnpack — Color tokens
+   Source of truth: BrandUnpack_BrandGuide.pdf
+   Primary:   #fffef8  #ff4a18  #0081af  #ff7749  #82d9e3  #161616
+   Secondary: #a2ddc5  #b4a9c8
+   =========================================================================== */
+:root {
+  /* ---- Brand palette (raw) ---- */
+  --bu-cream:      #fffef8;  /* paper / on-dark text */
+  --bu-orange-red: #ff4a18;  /* primary energy, CTAs */
+  --bu-orange:     #ff7749;  /* warm accent */
+  --bu-cyan:       #82d9e3;  /* cool accent */
+  --bu-blue:       #0081af;  /* deep accent, links */
+  --bu-ink:        #161616;  /* near-black */
+  --bu-mint:       #a2ddc5;  /* secondary */
+  --bu-lavender:   #b4a9c8;  /* secondary */
+  --bu-white:      #ffffff;
+
+  /* ---- Warm neutral ramp (tinted toward the cream paper) ---- */
+  --ink-900: #161616;
+  --ink-800: #2a2a28;
+  --ink-700: #3d3d3a;
+  --ink-600: #57564f;
+  --ink-500: #74736b;
+  --ink-400: #95948b;
+  --ink-300: #b9b8ad;
+  --ink-200: #d8d6cb;
+  --ink-100: #ebe9df;
+  --ink-50:  #f6f4ea;
+  --paper:   #fffef8;
+
+  /* ---- Signature gradient (warm → cool, the BrandUnpack mark) ---- */
+  --bu-gradient: linear-gradient(135deg, #ff4a18 0%, #ff7749 38%, #82d9e3 68%, #0081af 100%); /* @kind color */
+  --bu-gradient-warm: linear-gradient(135deg, #ff4a18 0%, #ff7749 100%); /* @kind color */
+  --bu-gradient-cool: linear-gradient(135deg, #82d9e3 0%, #0081af 100%); /* @kind color */
+
+  /* ===== Semantic aliases ===== */
+  --color-bg:            var(--paper);
+  --color-bg-inverse:    var(--ink-900);
+  --surface-card:        var(--bu-white);
+  --surface-sunken:      var(--ink-50);
+  --surface-inverse:     var(--ink-900);
+
+  --text-primary:        var(--ink-900);
+  --text-secondary:      var(--ink-600);
+  --text-tertiary:       var(--ink-400);
+  --text-on-brand:       var(--bu-cream);
+  --text-on-dark:        var(--bu-cream);
+  --text-link:           var(--bu-blue);
+
+  --brand-primary:       var(--bu-orange-red);
+  --brand-primary-hover: #e63f10;       /* darkened orange-red for hover */
+  --brand-primary-press: #cc380e;
+  --brand-accent:        var(--bu-blue);
+  --brand-accent-hover:  #006e95;
+
+  --border-subtle:       var(--ink-100);
+  --border-default:      var(--ink-200);
+  --border-strong:       var(--ink-300);
+  --border-focus:        var(--bu-blue);
+
+  /* status — derived from the brand spectrum */
+  --color-success:       #1f9d6b;   /* deepened mint */
+  --color-success-soft:  var(--bu-mint);
+  --color-info:          var(--bu-blue);
+  --color-info-soft:     var(--bu-cyan);
+  --color-warning:       var(--bu-orange);
+  --color-danger:        var(--bu-orange-red);
+
+  --focus-ring:          0 0 0 3px color-mix(in srgb, var(--bu-blue) 35%, transparent);
+}

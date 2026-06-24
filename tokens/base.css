@@ -1,0 +1,50 @@
+/* ===========================================================================
+   BrandUnpack — base element styles (opt-in resets + sensible defaults)
+   =========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--text-primary);
+  font: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  letter-spacing: var(--ls-tight);
+  text-wrap: balance;
+}
+h1 { font: var(--text-h1); }
+h2 { font: var(--text-h2); }
+h3 { font: var(--text-h3); }
+
+p { margin: 0 0 var(--space-4); text-wrap: pretty; }
+
+a { color: var(--text-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+small { font-size: var(--fs-sm); }
+code, kbd, pre { font-family: var(--font-mono); }
+
+::selection { background: var(--bu-orange); color: var(--bu-cream); }
+
+:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-xs); }
+
+.bu-eyebrow {
+  font: var(--fw-bold) var(--fs-xs)/1 var(--font-body);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--brand-primary);
+}
+
+.bu-gradient-text {
+  background: var(--bu-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

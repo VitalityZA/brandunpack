@@ -1,0 +1,12 @@
+/* ===========================================================================
+   BrandUnpack — Fonts
+   Brand font: "Broxa" (Regular) — RESERVED for the logo & brand name only.
+   The wordmark is shipped as outlined SVG (assets/logo-wordmark-*.svg), so no
+   Broxa binary is required. UI/product type uses the families below.
+
+   SUBSTITUTION NOTE: Broxa is a licensed display face and is not bundled.
+   For headings we use Poppins — the closest widely-available match to Broxa's
+   rounded, geometric character. Replace with the licensed Broxa if/when
+   provided by the brand owner.
+   =========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
